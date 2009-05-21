@@ -1,0 +1,23 @@
+# directories
+alias -g Desktop=$DESKTOP
+alias -g Trash=$TRASH
+alias -g Work=$WORK
+
+# files
+alias -g hosts=/etc/hosts
+
+# moving around
+alias ls='ls -aF'
+alias ll='ls -alF'
+alias pd='pushd'
+alias dirs='dirs -v'
+alias swap='pushd +1'
+
+# cleanup
+alias cl='rm *~ .*~ .#* #*'
+alias rc='rm core'
+alias rmds='find . -type f -name .DS_Store -exec rm {} \;'
+alias rm='rm -i'
+
+# programs
+alias em='emacs'
