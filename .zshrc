@@ -6,3 +6,4 @@ watch=all
 [[ -f $ZDOTDIR/.options ]] && . $ZDOTDIR/.options
 [[ -f $ZDOTDIR/.exports ]] && . $ZDOTDIR/.exports
 [[ -f $ZDOTDIR/.aliases ]] && . $ZDOTDIR/.aliases
+[[ -f $ZDOTDIR/.localrc ]] && . $ZDOTDIR/.localrc
