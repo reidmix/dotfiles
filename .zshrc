@@ -3,7 +3,8 @@ autoload colors && colors
 
 watch=all
 
-[[ -f $ZDOTDIR/.options ]] && . $ZDOTDIR/.options
-[[ -f $ZDOTDIR/.exports ]] && . $ZDOTDIR/.exports
-[[ -f $ZDOTDIR/.aliases ]] && . $ZDOTDIR/.aliases
-[[ -f $ZDOTDIR/.localrc ]] && . $ZDOTDIR/.localrc
+if [[ -f $ZDOTDIR/.options ]]; then . $ZDOTDIR/.options; fi
+if [[ -f $ZDOTDIR/.exports ]]; then . $ZDOTDIR/.exports; fi
+if [[ -f $ZDOTDIR/.aliases ]]; then . $ZDOTDIR/.aliases; fi
+if [[ -f $ZDOTDIR/.localrc ]]; then . $ZDOTDIR/.localrc; fi
+

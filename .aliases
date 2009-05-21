@@ -21,8 +21,8 @@ alias rm='rm -i'
 
 # typos and bad habits
 alias cd..='cd ..'
-alias aliases=alias
 alias mroe=more	   # chill, it's linked to less
+alias aliases=alias
 
 # programs
 alias em='emacs'
