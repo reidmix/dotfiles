@@ -19,5 +19,20 @@ alias rc='rm core'
 alias rmds='find . -type f -name .DS_Store -exec rm {} \;'
 alias rm='rm -i'
 
+# typos and bad habits
+alias cd..='cd ..'
+alias aliases=alias
+alias mroe=more	   # chill, it's linked to less
+
 # programs
 alias em='emacs'
+
+# mac os specific
+alias sf='SetFile' # -a V filename # => invisible
+
+# linking
+alias ln_mysqlsock='sudo ln -s /opt/local/var/run/mysql5/mysqld.sock /tmp/mysql.sock'
+alias ln_zshenv="ln -s $HOME/.zshenv $ZDOTDIR"
+
+# helpers
+alias ip='ifconfig -a | grep "inet " | grep -v tunnel | cut -d" " -f2'
