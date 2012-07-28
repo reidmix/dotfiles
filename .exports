@@ -1,19 +1,11 @@
-# shell variables
-FIGNORE=".bak:.bin:.gz:~"
-DIRSTACKSIZE=10
-
-# prompts
-PROMPT="%m:%~ %#%2(L:[%L]:) "
-RPROMPT="%(?::%{$fg[black]$bg[red]%}[%?]%{$reset_color%})"
-WATCHFMT="%B%n%b%(a: has %a:) %(M:from %B%M%b :%Blocalhost%b )(tty%l)"
-
-# history
-HISTFILE=$ZDOTDIR/.history
-SAVEHIST=1000
+# shell
+export ZDOTDIR="$HOME/.zsh"
+export EDITOR="emacs"
+export PAGER="less"
 
 # paths
 export CDPATH=$HOME/Work
-export PATH=/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/X11/bin
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/X11/bin
 export PATH=$PATH:$HOME/Library/Bin:/usr/bin:/usr/sbin:/bin:/sbin
 export MANPATH=/opt/local/share/man:/usr/local/man:/usr/share/man:/usr/X11/man
 
@@ -21,8 +13,4 @@ export MANPATH=/opt/local/share/man:/usr/local/man:/usr/share/man:/usr/X11/man
 export DESKTOP=$HOME/Desktop
 export TRASH=$HOME/.Trash
 export WORK=$HOME/Work
-
-export RUBY_HOME=/usr/lib/ruby/1.8/
-export GEMS_HOME=/Library/Ruby/Gems/1.8/gems/
-export GEMS_HOME_SYS=/usr/lib/ruby/gems/1.8/gems/
 

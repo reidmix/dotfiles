@@ -29,6 +29,9 @@ alias em='emacs'
 
 # mac os specific
 alias sf='SetFile' # -a V filename # => invisible
+alias sloff='sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search'
+alias slon='sudo chmod 755 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search'
+alias killmenu='killall SystemUIServer'
 
 # linking
 alias ln_mysqlsock='sudo ln -s /opt/local/var/run/mysql5/mysqld.sock /tmp/mysql.sock'
