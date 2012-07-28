@@ -1,3 +1,8 @@
+if [[ "1" == $ZRCDEBUG ]]; then echo -n "Loading .zshenv "; fi
+
+# paths
+ZDOTDIR="$HOME/.zsh"
+
 # shell variables
 FIGNORE=".bak:.bin:.gz:~"
 DIRSTACKSIZE=10

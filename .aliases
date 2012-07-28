@@ -1,9 +1,17 @@
+if [[ "1" == $ZRCDEBUG ]]; then echo -n ".aliases "; fi
+
 # directories
 alias -g Desktop=$DESKTOP
 alias -g Trash=$TRASH
 alias -g Work=$WORK
+alias -g .zsh=$ZDOTDIR
 
-# files
+# configs files
+configs=( aliases complete exports options localrc zshenv zshrc )
+for i in $configs; do alias -g .$i=$ZDOTDIR/.$i; done
+unset configs
+
+# system files
 alias -g hosts=/etc/hosts
 
 # moving around
@@ -14,8 +22,7 @@ alias dirs='dirs -v'
 alias swap='pushd +1'
 
 # cleanup
-alias cl='rm *~ .*~ .#* #*'
-alias rc='rm core'
+alias cl='rm *~ .*~'
 alias rmds='find . -type f -name .DS_Store -exec rm {} \;'
 alias rm='rm -i'
 
@@ -29,12 +36,11 @@ alias em='emacs'
 
 # mac os specific
 alias sf='SetFile' # -a V filename # => invisible
-alias sloff='sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search'
-alias slon='sudo chmod 755 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search'
+alias sloff='sudo chmod 600 $SEARCH
+alias slon='sudo chmod 755 $SEARCH
 alias killmenu='killall SystemUIServer'
 
 # linking
-alias ln_mysqlsock='sudo ln -s /opt/local/var/run/mysql5/mysqld.sock /tmp/mysql.sock'
 alias ln_zshenv="ln -s $HOME/.zshenv $ZDOTDIR"
 
 # helpers

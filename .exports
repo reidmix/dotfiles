@@ -1,5 +1,6 @@
-# shell
-export ZDOTDIR="$HOME/.zsh"
+if [[ "1" == $ZRCDEBUG ]]; then echo -n ".exports "; fi
+
+# shell variables
 export EDITOR="emacs"
 export PAGER="less"
 
@@ -14,3 +15,5 @@ export DESKTOP=$HOME/Desktop
 export TRASH=$HOME/.Trash
 export WORK=$HOME/Work
 
+# files
+export SEARCH=/System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
