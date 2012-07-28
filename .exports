@@ -5,10 +5,9 @@ export EDITOR="emacs"
 export PAGER="less"
 
 # paths
-export CDPATH=$HOME/Work
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/X11/bin
 export PATH=$PATH:$HOME/Library/Bin:/usr/bin:/usr/sbin:/bin:/sbin
-export MANPATH=/opt/local/share/man:/usr/local/man:/usr/share/man:/usr/X11/man
+export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man:/usr/X11/man
 
 # directories
 export DESKTOP=$HOME/Desktop

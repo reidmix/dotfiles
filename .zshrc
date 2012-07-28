@@ -5,7 +5,7 @@ autoload colors && colors
 
 watch=all
 fpath=($fpath $ZDOTDIR/.complete)
-cdpath=($cdpath .)
+cdpath=(. ~/Work $cdpath)
 
 if [[ -f $ZDOTDIR/.options ]]; then . $ZDOTDIR/.options; fi
 if [[ -f $ZDOTDIR/.exports ]]; then . $ZDOTDIR/.exports; fi

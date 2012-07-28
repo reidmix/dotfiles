@@ -13,5 +13,7 @@ RPROMPT="%(?::%{$fg[black]$bg[red]%}[%?]%{$reset_color%})"
 WATCHFMT="%B%n%b%(a: has %a:) %(M:from %B%M%b :%Blocalhost%b )(tty%l)"
 
 # history
+HISTSIZE=1000
 HISTFILE=$ZDOTDIR/.history
 SAVEHIST=1000
+

@@ -10,6 +10,7 @@ alias -g .zsh=$ZDOTDIR
 configs=( aliases complete exports options localrc zshenv zshrc )
 for i in $configs; do alias -g .$i=$ZDOTDIR/.$i; done
 unset configs
+alias zrcdebug='ZRCDEBUG=1 zsh'
 
 # system files
 alias -g hosts=/etc/hosts
@@ -22,7 +23,6 @@ alias dirs='dirs -v'
 alias swap='pushd +1'
 
 # cleanup
-alias cl='rm *~ .*~'
 alias rmds='find . -type f -name .DS_Store -exec rm {} \;'
 alias rm='rm -i'
 
@@ -39,9 +39,7 @@ alias sf='SetFile' # -a V filename # => invisible
 alias sloff='sudo chmod 600 $SEARCH
 alias slon='sudo chmod 755 $SEARCH
 alias killmenu='killall SystemUIServer'
-
-# linking
-alias ln_zshenv="ln -s $HOME/.zshenv $ZDOTDIR"
+alias showlib='chflags nohidden $HOME/Library/'
 
 # helpers
 alias ip='ifconfig -a | grep "inet " | grep -v tunnel | cut -d" " -f2'
