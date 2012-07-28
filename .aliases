@@ -1,9 +1,7 @@
 if [[ "1" == $ZRCDEBUG ]]; then echo -n ".aliases "; fi
 
 # directories
-alias -g Desktop=$DESKTOP
 alias -g Trash=$TRASH
-alias -g Work=$WORK
 alias -g .zsh=$ZDOTDIR
 
 # configs files
