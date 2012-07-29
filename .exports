@@ -15,5 +15,5 @@ export DOWNLOADS=$HOME/Downloads
 export TRASH=$HOME/.Trash
 export WORK=$HOME/Work
 
-# files
+# mac
 export SEARCH=/System/Library/CoreServices/Search.bundle/Contents/MacOS/Search

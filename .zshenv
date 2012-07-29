@@ -3,9 +3,15 @@ if [[ "1" == $ZRCDEBUG ]]; then echo -n "Loading .zshenv "; fi
 # paths
 ZDOTDIR="$HOME/.zsh"
 
-# shell variables
-FIGNORE=".bak:.bin:.gz:~"
+# shell env
+watch=notme
+fpath=($fpath $ZDOTDIR/.complete )
+fignore=(.bak .bin .gz)
+cdpath=(. ~/Work $cdpath)
+
+# shell parameters
 DIRSTACKSIZE=10
+WORDCHARS="*?_-.[]~=&;!#$%^(){}<>" # default *?_-.[]~=/&;!#$%^(){}<>
 
 # prompts
 PROMPT="%m:%~ %#%2(L:[%L]:) "

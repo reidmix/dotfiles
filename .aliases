@@ -34,8 +34,8 @@ alias em='emacs'
 
 # mac os specific
 alias sf='SetFile' # -a V filename # => invisible
-alias sloff='sudo chmod 600 $SEARCH
-alias slon='sudo chmod 755 $SEARCH
+alias sloff='sudo chmod 600 $SEARCH'
+alias slon='sudo chmod 755 $SEARCH'
 alias killmenu='killall SystemUIServer'
 alias showlib='chflags nohidden $HOME/Library/'
 
