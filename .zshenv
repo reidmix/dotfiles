@@ -7,7 +7,7 @@ ZDOTDIR="$HOME/.zsh"
 watch=notme
 fpath=($fpath $ZDOTDIR/.complete )
 fignore=(.bak .bin .gz)
-cdpath=(. ~/Work $cdpath)
+cdpath=(. $cdpath)
 
 # shell parameters
 DIRSTACKSIZE=10
