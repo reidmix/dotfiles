@@ -38,6 +38,8 @@ alias sloff='sudo chmod 600 $SEARCH'
 alias slon='sudo chmod 755 $SEARCH'
 alias killmenu='killall SystemUIServer'
 alias showlib='chflags nohidden $HOME/Library/'
+alias flushdnsold='sudo dscacheutil -flushcache'
+alias flushdnsnew='sudo killall -HUP mDNSResponder'
 
 # helpers
 alias ip='ifconfig -a | grep "inet " | grep -v tunnel | cut -d" " -f2'
