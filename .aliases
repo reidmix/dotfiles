@@ -40,6 +40,8 @@ alias killmenu='killall SystemUIServer'
 alias showlib='chflags nohidden $HOME/Library/'
 alias flushdnsold='sudo dscacheutil -flushcache'
 alias flushdnsnew='sudo killall -HUP mDNSResponder'
+alias fw80='sudo ipfw add 100 fwd 127.0.0.1,3000 tcp from any to any 80 in'
 
 # helpers
 alias ip='ifconfig -a | grep "inet " | grep -v tunnel | cut -d" " -f2'
+

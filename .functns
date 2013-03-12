@@ -1,0 +1,17 @@
+if [[ "1" == $ZRCDEBUG ]]; then echo -n ".functns "; fi
+
+# aliases
+chrome ()  { open -a "/Applications/Google Chrome.app" $* }
+
+# functions
+volume () {
+  if (( $# == 0 )); then
+    #echo -n 'volume: '
+    sudo osascript -e "output volume of (get volume settings)"
+  elif (( $# == 1 )); then
+    sudo osascript -e "set volume $1"
+  else 
+    echo "usage: $(basename "$0") [0-10]"
+  fi
+}
+

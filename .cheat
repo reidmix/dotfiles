@@ -1,0 +1,8 @@
+# DIRS
+
+# ~#/ is dirstack number like tcsh =#/
+# examples:
+# ~0/ pwd; 
+# ~+/ pwd; 
+# ~-/ oldpwd
+

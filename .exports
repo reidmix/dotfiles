@@ -3,6 +3,7 @@ if [[ "1" == $ZRCDEBUG ]]; then echo -n ".exports "; fi
 # shell variables
 export EDITOR="emacs"
 export PAGER="less"
+export BUNDLER_EDITOR="mate"
 
 # paths
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/X11/bin
