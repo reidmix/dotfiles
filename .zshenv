@@ -6,7 +6,7 @@ ZDOTDIR="$HOME/.zsh"
 # shell env
 watch=notme
 fpath=($fpath $ZDOTDIR/.complete )
-fignore=(.bak .bin .gz)
+fignore=(.DS_STORE .bak .bin .gz)
 cdpath=(. $cdpath)
 
 # shell parameters
