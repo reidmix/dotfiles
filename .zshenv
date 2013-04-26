@@ -22,4 +22,3 @@ WATCHFMT="%B%n%b%(a: has %a:) %(M:from %B%M%b :%Blocalhost%b )(tty%l)"
 HISTSIZE=1000
 HISTFILE=$ZDOTDIR/.history
 SAVEHIST=1000
-
