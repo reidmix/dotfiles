@@ -5,6 +5,9 @@ export EDITOR="emacs"
 export PAGER="less"
 export BUNDLER_EDITOR="mate"
 
+# dotfiles
+export IRBRC="$ZDOTDIR/.irbrc"
+
 # paths
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/X11/bin
 export PATH=$PATH:$HOME/Library/Bin:/usr/bin:/usr/sbin:/bin:/sbin

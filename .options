@@ -7,6 +7,7 @@ setopt NOTIFY
 
 # prompt
 setopt PROMPT_SUBST
+setopt PROMPT_PERCENT
 setopt TRANSIENT_RPROMPT
 
 # directories
@@ -26,3 +27,4 @@ setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
+
