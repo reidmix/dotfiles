@@ -19,17 +19,30 @@ ANSI = {
   :WHITE      => "\001\e[37m\002",
 }
 
+def prompt
+  return @my_prompt if @my_prompt
+
+  version = ENV['RUBY_VERSION'].gsub(/^ruby/, '').gsub(/-/, '')
+  gem_set = `rvm gemset name`.split('/').first
+  version << "@#{gem_set}" unless gem_set == ''
+  project = Rails.root.basename rescue nil
+
+  @my_prompt = "#{ANSI[:YELLOW]}#{version} "
+  @my_prompt << "#{ANSI[:BOLD]}#{ANSI[:MAGENTA]}\u276F #{ANSI[:CYAN]}#{project} " if project
+  @my_prompt
+end
+
 # configuration
 IRB.conf[:USE_READLINE] = true
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_PATH] = File::expand_path("~/.irb.history")
 IRB.conf[:AUTO_INDENT]  = true
-IRB.conf[:PROMPT][:IRB] => {
-  :PROMPT_I => "#{ANSI[:BLUE]}>>#{ANSI[:RESET]} ",      # normal prompt
-  :PROMPT_N => "#{ANSI[:BLUE]}?>#{ANSI[:RESET]} ",      #
-  :PROMPT_C => "#{ANSI[:RED]}->#{ANSI[:RESET]} ",       # continuation statement
-  :PROMPT_S => "#{ANSI[:YELLOW]}->#{ANSI[:RESET]} ",    # continuation string
-  :RETURN   => "#{ANSI[:GREEN]}=>#{ANSI[:RESET]} %s\n", # return value
+IRB.conf[:PROMPT][:IRB] = {
+  :PROMPT_I => "#{prompt}#{ANSI[:RESET]}",          # normal prompt
+  :PROMPT_N => "#{prompt}#{ANSI[:RED]}? #{ANSI[:MAGENTA]}\u276F #{ANSI[:RESET]}",          #
+  :PROMPT_C => "#{prompt}#{ANSI[:RED]}%i #{ANSI[:MAGENTA]}\u276F #{ANSI[:RESET]}",       # continuation statement
+  :PROMPT_S => "#{prompt}#{ANSI[:RED]}\" #{ANSI[:MAGENTA]}\u276F #{ANSI[:RESET]}",        # continuation string
+  :RETURN   => "#{ANSI[:BLUE]}=\u276F #{ANSI[:RESET]} %s\n",                 # return value
 }
 IRB.conf[:PROMPT_MODE] = :IRB
 
@@ -46,10 +59,12 @@ def extend_console(name, care = true, required = true)
   else
     $console_extensions << "#{ANSI[:LGRAY]}#{name}#{ANSI[:RESET]}"
   end
-rescue LoadError
+rescue LoadError => e
   $console_extensions << "#{ANSI[:RED]}#{name}#{ANSI[:RESET]}"
+  $console_ext_errors << e
 end
 $console_extensions = []
+$console_ext_errors = []
 
 # colorization of IRB output and history
 extend_console 'wirble' do
@@ -87,4 +102,4 @@ alias q exit
 alias po local_methods
 
 # results
-puts "#{ANSI[:CYAN]}~> Console extensions:#{ANSI[:RESET]} #{$console_extensions.join(' ')}#{ANSI[:RESET]}"
+puts "#{ANSI[:CYAN]}~\u276F Console extensions:#{ANSI[:RESET]} #{$console_extensions.join(' ')}#{ANSI[:RESET]}"
