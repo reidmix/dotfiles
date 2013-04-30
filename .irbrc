@@ -5,18 +5,18 @@ require 'irb/ext/save-history'
 require 'irb/completion'
 
 ANSI = {
-  :RESET      => "%{\e[0m%}",
-  :BOLD       => "\e[1m",
-  :UNDERLINE  => "\e[4m",
-  :LGRAY      => "\e[0;37m",
-  :GRAY       => "\e[0;90m",
-  :RED        => "\e[31m",
-  :GREEN      => "\e[32m",
-  :YELLOW     => "\e[33m",
-  :BLUE       => "\e[34m",
-  :MAGENTA    => "\e[35m",
-  :CYAN       => "\e[36m",
-  :WHITE      => "\e[37m",
+  :RESET      => "\001\e[0m\002",
+  :BOLD       => "\001\e[1m\002",
+  :UNDERLINE  => "\001\e[4m\002",
+  :LGRAY      => "\001\e[0;37m\002",
+  :GRAY       => "\001\e[0;90m\002",
+  :RED        => "\001\e[31m\002",
+  :GREEN      => "\001\e[32m\002",
+  :YELLOW     => "\001\e[33m\002",
+  :BLUE       => "\001\e[34m\002",
+  :MAGENTA    => "\001\e[35m\002",
+  :CYAN       => "\001\e[36m\002",
+  :WHITE      => "\001\e[37m\002",
 }
 
 # configuration
@@ -24,14 +24,14 @@ IRB.conf[:USE_READLINE] = true
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_PATH] = File::expand_path("~/.irb.history")
 IRB.conf[:AUTO_INDENT]  = true
-# # IRB.conf[:PROMPT][:IRB] = {
-# #   :PROMPT_I => "#{ANSI[:BLUE]}>>#{ANSI[:RESET]} ",      # normal prompt
-# #   :PROMPT_N => "#{ANSI[:BLUE]}?>#{ANSI[:RESET]} ",      #
-# #   :PROMPT_C => "#{ANSI[:RED]}->#{ANSI[:RESET]} ",       # continuation statement
-# #   :PROMPT_S => "#{ANSI[:YELLOW]}->#{ANSI[:RESET]} ",    # continuation string
-# #   :RETURN   => "#{ANSI[:GREEN]}=>#{ANSI[:RESET]} %s\n", # return value
-# # }
-# IRB.conf[:PROMPT_MODE] = :IRB
+IRB.conf[:PROMPT][:IRB] => {
+  :PROMPT_I => "#{ANSI[:BLUE]}>>#{ANSI[:RESET]} ",      # normal prompt
+  :PROMPT_N => "#{ANSI[:BLUE]}?>#{ANSI[:RESET]} ",      #
+  :PROMPT_C => "#{ANSI[:RED]}->#{ANSI[:RESET]} ",       # continuation statement
+  :PROMPT_S => "#{ANSI[:YELLOW]}->#{ANSI[:RESET]} ",    # continuation string
+  :RETURN   => "#{ANSI[:GREEN]}=>#{ANSI[:RESET]} %s\n", # return value
+}
+IRB.conf[:PROMPT_MODE] = :IRB
 
 class Object
   def local_methods() (methods - 1.methods).sort; end
@@ -84,8 +84,7 @@ end
 
 # aliases
 alias q exit
-alias local_methods po
-alias class_methods poc
+alias po local_methods
 
 # results
 puts "#{ANSI[:CYAN]}~> Console extensions:#{ANSI[:RESET]} #{$console_extensions.join(' ')}#{ANSI[:RESET]}"
