@@ -19,5 +19,3 @@ ZSH_THEME="reidmix"
 plugins=(brew git rails3 ruby)
 
 if [[ -f "$OHMYZSH/oh-my-zsh.sh" ]] ; then . "$OHMYZSH/oh-my-zsh.sh"; fi
-
-

@@ -23,9 +23,10 @@ def prompt
   return @my_prompt if @my_prompt
 
   version = ENV['RUBY_VERSION'].gsub(/^ruby/, '').gsub(/-/, '')
+  project = Rails.root.basename.to_s rescue nil
   gem_set = `rvm gemset name`.split('/').first
+  gem_set = '' if project && project == gem_set
   version << "@#{gem_set}" unless gem_set == ''
-  project = Rails.root.basename rescue nil
 
   @my_prompt = "#{ANSI[:YELLOW]}#{version} "
   @my_prompt << "#{ANSI[:BOLD]}#{ANSI[:MAGENTA]}\u276F #{ANSI[:CYAN]}#{project} " if project

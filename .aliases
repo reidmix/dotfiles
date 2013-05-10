@@ -5,7 +5,7 @@ alias -g Trash=$TRASH
 alias -g .zsh=$ZDOTDIR
 
 # configs files
-configs=( aliases complete exports options localrc zshenv zshrc )
+configs=( aliases complete exports options localrc ohmyzsh zshenv zshrc )
 for i in $configs; do alias -g .$i=$ZDOTDIR/.$i; done
 unset configs
 alias zrcdebug='ZRCDEBUG=1 zsh'
@@ -31,6 +31,7 @@ alias aliases=alias
 
 # programs
 alias em='emacs'
+alias be='bundle exec'
 
 # mac os specific
 alias sf='SetFile' # -a V filename # => invisible
