@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
-DOTDIRS="$HOME/.files"
 cd $HOME
+DOTDIRS=".files"
 
 link_dotfile () {
   if (( $# != 2 )); then echo "link called with wrong number of aruments ($# not 2)"; fi
@@ -10,7 +10,7 @@ link_dotfile () {
   # $(ln -s "$DOTDIRS/zsh/$filename .$filename")
 }
 
-set -A zsh      zshrc zshenv
+set -A zsh      zshenv
 set -A tcsh     tcshrc login
 set -A irb      irbrc
 set -A dotfiles zsh tcsh irb
