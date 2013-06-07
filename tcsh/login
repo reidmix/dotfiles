@@ -1,0 +1,7 @@
+# SCREEN
+if ($?interactive) then
+  set screens=`screen -list | grep Detached`
+  if ("$screens" != "") then
+    echo "You have detached screens."
+  endif
+endif

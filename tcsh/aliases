@@ -1,0 +1,85 @@
+# clean up
+alias cl    'rm *~ .*~ .#* #*'
+alias rc    'rm core'
+alias rm    'rm -i'
+alias rmds  'find . -type f -name .DS_Store | xargs rm'
+
+# directory stack
+alias pd    'pushd'
+alias dirs  'dirs -v'
+alias swap  'pd =-'
+
+# printing
+alias choosepr  'sudo at_cho_prn'
+alias catpr     'cat \!* | enscript -p- -B | atprint'
+alias manpr     'man \!^ | enscript -p- -B | atprint'
+
+# network
+alias nethost 'netstat -r | tail +7 | egrep -v link | cut -f1 -d\ '
+alias hosts   'egrep -v -e "$hash|$blank" /etc/hosts | cut -f 2'
+
+# admin
+alias kick  'sudo kill -HUP `cat /var/run/\!^.pid`'
+alias proc  'ps -ax | grep \!*'
+alias logs  'sudo more /var/log/\!^.log'
+alias redo  'sudo \!-1'	# 'sudo !!' tries to execute 'sudo redo'
+
+# shortcuts
+alias emc '/usr/bin/emacs-21.1'		# console emacs
+alias emx '/usr/bin/emacs-21.3.50 -l ~/.emacs.face' # emacs on mac os x
+alias em  '/usr/bin/emacs'
+alias ls  'ls-F -a'
+alias ll  'ls-F -al'
+alias lm  'ls | more'
+alias md  'mkdir -p'
+alias rd  'rmdir'
+alias ff  'find . -name "$*"'
+
+# sourcing
+alias sc    source
+alias scall source ${rc}/.tcshrc
+
+# screen
+alias reattach  screen -r
+
+# typos
+alias cd..  cd ..
+alias mroe  more
+alias LS    ls
+alias alais alias
+
+# ldap queries
+alias ldapuid   ldapsearch -x -h localhost:3891 -b 'ou=elnkmail,ou=elnkusers,o=earthlink' 'uid=\!:1'
+alias ldapuuid  ldapsearch -x -h localhost:3891 -b 'ou=elnkmail,ou=elnkusers,o=earthlink' 'uuid=\!:1'
+
+# mac os x
+alias bb        "/usr/bin/bbedit"
+alias safari    "open -a /Applications/Safari.app"
+alias adobe     "open -a /Applications/Adobe\ Photoshop\ CS2/Adobe\ Photoshop\ CS2.app"
+alias preview   "open -a /Applications/Preview.app"
+alias ie        "open -a /Applications/Internet\ Explorer.app"
+alias jssh      "/Applications/Firefox.app/Contents/MacOS/firefox-bin -jssh"
+
+# remember:
+alias pbpaste   "pbpaste"
+alias pbcopy    "pbcopy"
+
+# functions
+alias xmp   "open x-man-page://\!:1"
+alias jdk   "ls -al $JAVA_CURRENT | cut -d' ' -f 15"
+alias ip    "ifconfig -a | grep 'inet ' | grep -v tunnel | cut -d' ' -f 2"
+
+# timestamp
+alias timestamp	"date +%C%y%m%d"
+
+# mysql
+#alias mysql         /usr/local/mysql/bin/mysql
+#alias mysqladmin    /usr/local/mysql/bin/mysqladmin
+
+# emacs mud
+alias emud          "emacs -batch -l dunnet"
+
+# macosx defaults
+alias screensharing "defaults write com.apple.ScreenSharing \
+'NSToolbar Configuration ControlToolbar' -dict-add 'TB Item Identifiers' \
+'(Scale,Control,Share,Curtain,Capture,FullScreen,GetClipboard,SendClipboard,Quality)'"
