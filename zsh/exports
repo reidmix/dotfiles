@@ -6,10 +6,6 @@ export PAGER="less"
 export BUNDLER_EDITOR="mate"
 export CLICOLOR=1
 
-# dotfiles
-export IRBDOT="$FILEDIR/irb"
-export IRBRC="$IRBDOT/irbrc"
-
 # paths
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/X11/bin
 export PATH=$PATH:$HOME/Library/Bin:$HOME/.rvm/bin
@@ -25,3 +21,7 @@ export GIST=$WORK/Gist
 
 # mac
 export SEARCH=/System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
+
+# irc
+export IRCNICK=reidmix
+export IRCNAME=reidmix@gmail.com

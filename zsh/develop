@@ -1,0 +1,11 @@
+if [[ "1" == $ZRCDEBUG ]]; then echo -n ".develop "; fi
+
+# This loads RVM into a shell session.
+if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then . "$HOME/.rvm/scripts/rvm"; fi
+
+# Path
+PATH=$PATH:$RVM_BIN_PATH
+
+# returns correct IRBRC
+export IRBDIR="$DOTFILE/irb"
+export IRBRC="$IRBDIR/irbrc"
