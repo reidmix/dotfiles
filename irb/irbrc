@@ -36,14 +36,14 @@ end
 # configuration
 IRB.conf[:USE_READLINE] = true
 IRB.conf[:SAVE_HISTORY] = 1000
-IRB.conf[:HISTORY_PATH] = File::expand_path("~/.irb.history")
+IRB.conf[:HISTORY_PATH] = File.join(ENV['IRBDIR'], '.history')
 IRB.conf[:AUTO_INDENT]  = true
 IRB.conf[:PROMPT][:IRB] = {
   :PROMPT_I => "#{prompt}#{ANSI[:RESET]}",          # normal prompt
-  :PROMPT_N => "#{prompt}#{ANSI[:RED]}? #{ANSI[:MAGENTA]}\u276F #{ANSI[:RESET]}",          #
-  :PROMPT_C => "#{prompt}#{ANSI[:RED]}%i #{ANSI[:MAGENTA]}\u276F #{ANSI[:RESET]}",       # continuation statement
-  :PROMPT_S => "#{prompt}#{ANSI[:RED]}\" #{ANSI[:MAGENTA]}\u276F #{ANSI[:RESET]}",        # continuation string
-  :RETURN   => "#{ANSI[:BLUE]}=\u276F #{ANSI[:RESET]} %s\n",                 # return value
+  :PROMPT_N => "#{prompt}#{ANSI[:RED]}? #{ANSI[:MAGENTA]}\u276F #{ANSI[:RESET]}",  #
+  :PROMPT_C => "#{prompt}#{ANSI[:RED]}%i #{ANSI[:MAGENTA]}\u276F #{ANSI[:RESET]}", # continuation statement
+  :PROMPT_S => "#{prompt}#{ANSI[:RED]}\" #{ANSI[:MAGENTA]}\u276F #{ANSI[:RESET]}", # continuation string
+  :RETURN   => "#{ANSI[:BLUE]}=\u276F #{ANSI[:RESET]} %s\n",                       # return value
 }
 IRB.conf[:PROMPT_MODE] = :IRB
 
