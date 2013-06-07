@@ -7,7 +7,8 @@ export BUNDLER_EDITOR="mate"
 export CLICOLOR=1
 
 # dotfiles
-export IRBRC="$ZDOTDIR/.irbrc"
+export IRBDOT="$FILEDIR/irb"
+export IRBRC="$IRBDOT/irbrc"
 
 # paths
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/X11/bin

@@ -1,7 +1,8 @@
 if [[ "1" == $ZRCDEBUG ]]; then echo -n "Loading .zshenv "; fi
 
 # paths
-ZDOTDIR="$HOME/.zsh"
+FILEDIR="$HOME/.files"
+ZDOTDIR="$FILEDIR/zsh"
 
 # shell env
 watch=notme
