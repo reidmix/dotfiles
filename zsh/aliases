@@ -4,7 +4,7 @@ if [[ "1" == $ZRCDEBUG ]]; then echo -n ".aliases "; fi
 alias -g Trash=$TRASH
 
 # configs files
-alias zrcdebug='ZRCDEBUG=1 zsh'
+alias zrcdebug='ZRCDEBUG=1 DISABLE_AUTO_UPDATE=true zsh'
 
 # system files
 alias -g hosts=/etc/hosts
