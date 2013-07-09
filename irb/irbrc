@@ -24,12 +24,12 @@ def prompt
 
   version = ENV['RUBY_VERSION'].gsub(/^ruby/, '').gsub(/-/, '')
   project = Rails.root.basename.to_s rescue nil
-  gem_set = `rvm gemset name`.split('/').first
+  gem_set = `rvm gemset name`.split('/').first.chomp
   gem_set = '' if project && project == gem_set
   version << "@#{gem_set}" unless gem_set == ''
 
   @my_prompt = "#{ANSI[:YELLOW]}#{version} "
-  @my_prompt << "#{ANSI[:BOLD]}#{ANSI[:MAGENTA]}\u276F #{ANSI[:CYAN]}#{project} " if project
+  @my_prompt << "#{ANSI[:BOLD]}#{ANSI[:MAGENTA]}\u276F #{ANSI[:CYAN]}#{project}p " if project
   @my_prompt
 end
 
@@ -39,7 +39,7 @@ IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_PATH] = File.join(ENV['IRBDIR'], '.history')
 IRB.conf[:AUTO_INDENT]  = true
 IRB.conf[:PROMPT][:IRB] = {
-  :PROMPT_I => "#{prompt}#{ANSI[:RESET]}",          # normal prompt
+  :PROMPT_I => "#{prompt}#{ANSI[:RESET]}",                                         # normal prompt
   :PROMPT_N => "#{prompt}#{ANSI[:RED]}? #{ANSI[:MAGENTA]}\u276F #{ANSI[:RESET]}",  #
   :PROMPT_C => "#{prompt}#{ANSI[:RED]}%i #{ANSI[:MAGENTA]}\u276F #{ANSI[:RESET]}", # continuation statement
   :PROMPT_S => "#{prompt}#{ANSI[:RED]}\" #{ANSI[:MAGENTA]}\u276F #{ANSI[:RESET]}", # continuation string
