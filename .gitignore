@@ -1,3 +1,4 @@
-**/.*~
+**/*~
 **/.history
-**/.zcompdump
+**/.zcompdump*
+**/irbrc_history
