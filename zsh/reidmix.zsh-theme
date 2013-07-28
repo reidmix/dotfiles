@@ -21,7 +21,7 @@ prompt_giticon() {
   if [[ ${git_status} =~ "# Changes to be committed:" && ${git_status} =~ "# Changes not staged" ]]; then
     local state="±"
   elif [[ ! ${git_status} =~ "nothing to commit" ]]; then
-    local state="⚡"
+    local state="⚡︎"
   fi
 
   if [[ ${git_status} =~ "# Your branch and .* have diverged" ]]; then
