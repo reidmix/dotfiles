@@ -11,7 +11,7 @@ prompt_context() {
   local host=`echo $HOST:l| cut -d\. -f1`
 
   if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    echo "%{$fg_bold[yellow]%} $user@$host "
+    echo "%{$fg_bold[yellow]%}$user@$host "
   fi
 }
 
