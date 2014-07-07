@@ -1,0 +1,17 @@
+if [[ "1" == $ZRCDEBUG ]]; then echo -n ".develop "; fi
+
+# This loads RVM into a shell session.
+#   if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then . "$HOME/.rvm/scripts/rvm"; fi
+#   PATH=$PATH:$RVM_BIN_PATH
+
+# This loads rbenv into a session
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# returns correct IRBRC
+export IRBDIR="$DOTFILE/irb"
+export IRBRC="$IRBDIR/irbrc"
+
+# Setup python virtualenv 
+export WORKON_HOME=$HOME/.pyenv
+if [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] ; then . "/usr/local/bin/virtualenvwrapper.sh"; fi

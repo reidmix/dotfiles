@@ -2,13 +2,9 @@ if [[ "1" == $ZRCDEBUG ]]; then echo -n ".aliases "; fi
 
 # directories
 alias -g Trash=$TRASH
-alias -g .zsh=$ZDOTDIR
 
 # configs files
-configs=( aliases complete exports options localrc ohmyzsh zshenv zshrc )
-for i in $configs; do alias -g .$i=$ZDOTDIR/.$i; done
-unset configs
-alias zrcdebug='ZRCDEBUG=1 zsh'
+alias zrcdebug='ZRCDEBUG=1 DISABLE_AUTO_UPDATE=true zsh'
 
 # system files
 alias -g hosts=/etc/hosts
@@ -32,6 +28,7 @@ alias aliases=alias
 # programs
 alias em='emacs'
 alias be='bundle exec'
+alias m1='open -a "/Applications/TextMate 1.app"'
 
 # mac os specific
 alias sf='SetFile' # -a V filename # => invisible
@@ -44,6 +41,7 @@ alias flushdnsnew='sudo killall -HUP mDNSResponder'
 alias fw80='sudo ipfw add 100 fwd 127.0.0.1,3000 tcp from any to any 80 in'
 
 # helpers
+alias timestamp='date +%C%y%m%d'
 alias ip-external='echo $(curl -s "http://ipecho.net/plain")'
 alias ip-internal='ifconfig -a | grep "inet " | grep -v tunnel | cut -d" " -f2'
 alias ip='(ip-internal; ip-external)'

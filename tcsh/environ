@@ -1,0 +1,56 @@
+# files created are -rw-r--r--
+umask 022
+
+# environment variables
+set dunique
+set implicitcd
+set noglob
+set cdpath = (~)
+
+# mnumonics for special chars
+set space = ' '
+set quote = '"'
+set blank = '^$'
+set hash  = '#'
+
+# turn on noglob again
+unset noglob
+
+# prompt and term customization
+set promptchars = "%#"
+set prompt = "%n@%m:%c3%# "
+set rprompt = "%B%h%b"
+set prompt2 = "%R -> "        # if/while prompt
+set prompt3 = "OK? %R? "      # Spell correction prompt
+alias precmd 'echo -n "]2;${user}@${host} "'
+
+# shell configuration
+set history = 500	
+set savehist = 1000 merge
+set histdup = prev
+set histfile = ${rc}/.history
+
+# word completion
+set fignore = ( \~ .bak .o .bin RCS CVS )
+set nostat =  ( /afs /net /Net /Network/Servers )
+set matchbeep = nomatch
+set autolist
+set autoexpand
+set autocorrect
+
+# random
+set correct = cmd             # Spell Correction on
+set inputmode = insert        # Insert chars (not overwrite)
+set nokanji                   # Disable kanji if enabled
+set rmstar                   # Prompt before doing 'rm *'
+#set listflags = a
+
+# no coredumps
+limit coredumpsize 0
+
+# WATCH FOR LOCAL LOGGINS
+set watch = ( 0 any any )
+set who = "%B%n%b %a %l from %B%M%b at %t"
+
+# misc
+set today = `date '+%y%m%d'`

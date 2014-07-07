@@ -1,0 +1,35 @@
+# set up host dependent variabls
+set rc   = "${HOME}/.tcsh"
+set host = `hostname -s`
+set host = `echo $host | tr A-Z a-z`
+set user = `whoami`
+
+if ($?prompt) set interactive
+
+if (! $?ENV_SET) then   # Top-most shell
+  if (-r "${rc}/.environ" && ($?prompt || $?XSESSION)) then
+    source "${rc}/.environ"
+  endif
+else                    # NON ENV_SET, 2nd+ shells
+  # noop
+endif
+
+# DEFAULT KEY BINDINGS
+if ($?interactive) then
+  if ("${version}" =~ "tcsh"*) bindkey "^R" i-search-back
+endif
+
+if ($?interactive) then
+  # These aren't useful for non-interactive sessions
+  if (-r "${rc}/.default" && ! $?noalias) then
+    source "${rc}/.default"
+  endif
+  if (-r "${rc}/.aliases" && ! $?noalias) then
+    source "${rc}/.aliases"
+  endif
+  if (-r "${rc}/.complete" && ! $?noalias && $?version) then
+    if ("$version" =~ tcsh*) source "${rc}/.complete"
+  endif
+endif
+
+endif

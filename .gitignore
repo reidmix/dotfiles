@@ -1,4 +1,4 @@
-.*~
-.history
-.localrc
-.zcompdump
+**/*~
+**/.history
+**/.zcompdump*
+irbrc_history

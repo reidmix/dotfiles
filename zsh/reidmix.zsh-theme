@@ -11,7 +11,7 @@ prompt_context() {
   local host=`echo $HOST:l| cut -d\. -f1`
 
   if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    echo "%{$fg_bold[yellow]%} $user@$host "
+    echo "%{$fg_bold[yellow]%}$user@$host "
   fi
 }
 
@@ -21,7 +21,7 @@ prompt_giticon() {
   if [[ ${git_status} =~ "# Changes to be committed:" && ${git_status} =~ "# Changes not staged" ]]; then
     local state="±"
   elif [[ ! ${git_status} =~ "nothing to commit" ]]; then
-    local state="⚡"
+    local state="⚡︎"
   fi
 
   if [[ ${git_status} =~ "# Your branch and .* have diverged" ]]; then

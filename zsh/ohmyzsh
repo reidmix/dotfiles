@@ -16,6 +16,6 @@ ZSH_THEME="reidmix"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew bundler gem git github heroku rails3 ruby ssh-agent)
+plugins=(brew bundler gem git github heroku rails ruby ssh-agent gem)
 
 if [[ -f "$OHMYZSH/oh-my-zsh.sh" ]] ; then . "$OHMYZSH/oh-my-zsh.sh"; fi

@@ -3,15 +3,12 @@ if [[ "1" == $ZRCDEBUG ]]; then echo -n ".exports "; fi
 # shell variables
 export EDITOR="emacs"
 export PAGER="less"
-export BUNDLER_EDITOR="mate"
+export BUNDLER_EDITOR="mate -w"
 export CLICOLOR=1
-
-# dotfiles
-export IRBRC="$ZDOTDIR/.irbrc"
 
 # paths
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/X11/bin
-export PATH=$PATH:$HOME/Library/Bin:$HOME/.rvm/bin
+export PATH=$PATH:$HOME/Library/Bin
 export PATH=$PATH:/usr/bin:/usr/sbin:/bin:/sbin
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man:/usr/X11/man
 
@@ -21,6 +18,11 @@ export DOWNLOADS=$HOME/Downloads
 export TRASH=$HOME/.Trash
 export WORK=$HOME/Work
 export GIST=$WORK/Gist
+export STACK=$WORK/OpenStack
 
 # mac
 export SEARCH=/System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
+
+# irc
+export IRCNICK=reidmix
+export IRCNAME=reidmix@gmail.com
