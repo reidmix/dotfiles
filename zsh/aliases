@@ -32,8 +32,10 @@ alias m1='open -a "/Applications/TextMate 1.app"'
 
 # mac os specific
 alias sf='SetFile' # -a V filename # => invisible
-alias sloff='sudo chmod 600 $SEARCH'
-alias slon='sudo chmod 755 $SEARCH'
+alias slhide='sudo chmod 600 $SEARCH'alias sloff='sudo chmod 600 $SEARCH'
+alias slshow='sudo chmod 755 $SEARCH'alias slon='sudo chmod 755 $SEARCH'
+alias sloff='sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist'
+alias slon='sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist'
 alias killmenu='killall SystemUIServer'
 alias showlib='chflags nohidden $HOME/Library/'
 alias flushdnsold='sudo dscacheutil -flushcache'
