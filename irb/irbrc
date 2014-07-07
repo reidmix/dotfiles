@@ -4,7 +4,7 @@ require 'yaml'
 require 'irb/ext/save-history'
 require 'irb/completion'
 
-ANSI = {
+ANSIX = {
   :RESET      => "\001\e[0m\002",
   :BOLD       => "\001\e[1m\002",
   :UNDERLINE  => "\001\e[4m\002",
@@ -18,6 +18,8 @@ ANSI = {
   :CYAN       => "\001\e[36m\002",
   :WHITE      => "\001\e[37m\002",
 }
+
+ANSI = {}
 
 def env_from_rvm
   version = ENV['RUBY_VERSION'].gsub(/^ruby/, '').gsub(/-/, '')

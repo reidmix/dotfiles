@@ -28,6 +28,7 @@ alias aliases=alias
 # programs
 alias em='emacs'
 alias be='bundle exec'
+alias m1='open -a "/Applications/TextMate 1.app"'
 
 # mac os specific
 alias sf='SetFile' # -a V filename # => invisible

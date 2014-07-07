@@ -3,7 +3,7 @@ if [[ "1" == $ZRCDEBUG ]]; then echo -n ".exports "; fi
 # shell variables
 export EDITOR="emacs"
 export PAGER="less"
-export BUNDLER_EDITOR="mate"
+export BUNDLER_EDITOR="mate -w"
 export CLICOLOR=1
 
 # paths
@@ -18,6 +18,7 @@ export DOWNLOADS=$HOME/Downloads
 export TRASH=$HOME/.Trash
 export WORK=$HOME/Work
 export GIST=$WORK/Gist
+export STACK=$WORK/OpenStack
 
 # mac
 export SEARCH=/System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
