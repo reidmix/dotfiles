@@ -31,6 +31,7 @@ alias be='bundle exec'
 alias m1='open -a "/Applications/TextMate 1.app"'
 
 # mac os specific
+alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
 alias sf='SetFile' # -a V filename # => invisible
 alias slhide='sudo chmod 600 $SEARCH'alias sloff='sudo chmod 600 $SEARCH'
 alias slshow='sudo chmod 755 $SEARCH'alias slon='sudo chmod 755 $SEARCH'
