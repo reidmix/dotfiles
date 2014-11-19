@@ -16,9 +16,8 @@ export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man:/usr/X11/man
 export DESKTOP=$HOME/Desktop
 export DOWNLOADS=$HOME/Downloads
 export TRASH=$HOME/.Trash
-export WORK=$HOME/Work
-export GIST=$WORK/Gist
-export STACK=$WORK/OpenStack
+export CODE=$HOME/Code
+export GIST=$CODE/Gist
 
 # mac
 export SEARCH=/System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
