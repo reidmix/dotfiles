@@ -1,0 +1,1 @@
+rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
