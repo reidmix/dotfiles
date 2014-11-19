@@ -1,13 +1,18 @@
 #!/usr/bin/env zsh
 
 cd $HOME
-DOTDIRS=".files"
+DOTDIRS=.files
 
 link_dotfile () {
   if (( $# != 2 )); then echo "link called with wrong number of aruments ($# not 2)"; fi
 
-  echo "ln -s $DOTDIRS/$1/$2 .$2"
-  # $(ln -s "$DOTDIRS/zsh/$filename .$filename")
+	dir=$1
+	filename=$2
+
+  if [ ! -L ".$filename" ]; then
+	  echo "ln -s $DOTDIRS/$dir/$filename .$filename"
+	  ruby -e "$(ln -s $DOTDIRS/$dir/$filename .$filename)"
+  fi
 }
 
 set -A zsh      zshenv
