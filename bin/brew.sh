@@ -1,6 +1,5 @@
-#!/usr/bin/env zsh
+brewdirs=( Library share )
 
-set -A brewdirs Library share
 for brewdir in $brewdirs; do
 	dir="/usr/local/$brewdir" 
   if ! [ -w $dir ]; then 
@@ -10,7 +9,7 @@ for brewdir in $brewdirs; do
 done
 
 # Check for Homebrew, install if we don't have it
-if test ! $(which brew); then
+if [ ! $(which brew) ]; then
   echo "Installing homebrew..."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
