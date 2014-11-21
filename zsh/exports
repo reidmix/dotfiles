@@ -7,7 +7,9 @@ export BUNDLER_EDITOR="mate -w"
 export CLICOLOR=1
 
 # paths
+### Added by the Heroku Toolbelt
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/X11/bin
+export PATH=$PATH:/usr/local/heroku/bin
 export PATH=$PATH:$HOME/Library/Bin
 export PATH=$PATH:/usr/bin:/usr/sbin:/bin:/sbin
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man:/usr/X11/man
