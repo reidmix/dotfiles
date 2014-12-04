@@ -20,7 +20,7 @@ get_prompt_whoami() {
 
 get_prompt_cloud() {
   if [[ -n "$HEROKU_CLOUD" ]]; then
-    echo "$PROMPT_CLOUD  $HEROKU_CLOUD"
+    echo "$PROMPT_CLOUD $HEROKU_CLOUD"
   fi
 }
 
