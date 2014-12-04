@@ -38,10 +38,6 @@ get_prompt_nostat() {
   fi
 }
 
-get_prompt_cwd() {
-  echo "%c"
-}
-
 parse_git_dirty() {
   local git_status="$(command git status 2>/dev/null)"
   local state;
@@ -95,7 +91,7 @@ build_prompt() {
   build_prompt="${build_prompt}$(promptize "whoami"   "yellow")"
   build_prompt="${build_prompt}$(promptize "status"   "red")"
   build_prompt="${build_prompt}$(promptize "nostat"   "magenta")"
-  build_prompt="${build_prompt}$(promptize "cwd"      "cyan")"
+  build_prompt="${build_prompt}$(colorize  "%c"       "cyan")"
 
   echo "${build_prompt}"
 }
