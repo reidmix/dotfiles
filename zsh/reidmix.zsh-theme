@@ -2,9 +2,9 @@ PROMPT_ERROR="✖"
 PROMPT_BGJOB="⚙"
 PROMPT_DELIM="❯"
 PROMPT_CLOUD="☁"
-PROMPT_GIT_STAGE="±"
+PROMPT_GIT_STAGE="✽"
 PROMPT_GIT_TRACK="⦿"
-PROMPT_GIT_CHECK="✽"
+PROMPT_GIT_CHECK="±"
 PROMPT_GIT_MERGE="↕"
 PROMPT_GIT_PUSH="↑"
 PROMPT_GIT_PULL="↓"
@@ -42,10 +42,7 @@ get_prompt_cwd() {
   echo "%c"
 }
 
-function build_git_info() {
-  ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
-  ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
-
+parse_git_dirty() {
   local git_status="$(command git status 2>/dev/null)"
   local state;
   local remote;
@@ -65,8 +62,17 @@ function build_git_info() {
   elif [[ ${git_status} =~ "Changes not staged for commit" ]]; then
     state=$PROMPT_GIT_STAGE
   fi
+  
+  if [[ -n $remote || -n $state ]]; then
+    echo " $remote$state"
+  fi
+}
 
-  echo "%{$fg_bold[magenta]%}$PROMPT_DELIM %{$fg_bold[red]%}${ref#refs/heads/} %{$fg_bold[yellow]%}$remote$state%{$reset_color%} "
+function build_git_info() {
+  ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
+  ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
+
+  echo "%{$fg_bold[magenta]%}$PROMPT_DELIM %{$fg_bold[red]%}${ref#refs/heads/}%{$fg_bold[yellow]%}$(parse_git_dirty)%{$reset_color%} "
 }
 
 c() {
