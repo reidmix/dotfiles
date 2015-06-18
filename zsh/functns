@@ -20,3 +20,12 @@ cloud() {
   cloud "$@"
 }
 
+clean_ssh_agent() {
+	SSH_AGENT_ENV="$HOME/.ssh/environment-$HOSTNAME"
+	SSH_AGENT_RUN=$(ps -cju $USER | grep -v ^root | grep ssh-agent)
+
+	if [[ "$SSH_AGENT_RUN" == ""  && -f $SSH_AGENT_ENV ]] ; then
+		echo "removing $SSH_AGENT_ENV"
+		rm -f $SSH_AGENT_ENV
+	fi
+}
