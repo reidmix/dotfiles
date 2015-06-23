@@ -20,7 +20,7 @@ get_prompt_whoami() {
 
 get_prompt_cloud() {
   if [[ -n "$HEROKU_CLOUD" ]]; then
-    echo "$PROMPT_CLOUD $HEROKU_CLOUD"
+    echo "$PROMPT_CLOUD  $HEROKU_CLOUD"
   fi
 }
 
@@ -58,7 +58,7 @@ parse_git_dirty() {
   elif [[ ${git_status} =~ "Changes not staged for commit" ]]; then
     state=$PROMPT_GIT_STAGE
   fi
-  
+
   if [[ -n $remote || -n $state ]]; then
     echo "$remote$state"
   fi
@@ -81,7 +81,7 @@ build_git_state() {
   git_state="${git_state}$(colorize "$PROMPT_DELIM"       "magenta")"
   git_state="${git_state}$(colorize "${ref#refs/heads/}"  "red")"
   git_state="${git_state}$(colorize "$(parse_git_dirty)"  "yellow")"
-  
+
   echo $git_state
 }
 
