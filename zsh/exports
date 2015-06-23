@@ -27,3 +27,8 @@ export SEARCH=/System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
 # irc
 export IRCNICK=reidmix
 export IRCNAME=reidmix@gmail.com
+
+if [[ "$HOSTNAME" == "" ]]; then
+	# set it on behalf of the mac
+	export HOSTNAME=$(scutil --get ComputerName)
+fi

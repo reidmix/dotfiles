@@ -7,6 +7,9 @@ OHMYZSH=$HOME/.oh-my-zsh
 ZSH=$OHMYZSH
 ZSH_CUSTOM=$ZDOTDIR
 
+# cleanup ssh-agent before plugins are loaded
+clean_ssh_agent
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)

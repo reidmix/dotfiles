@@ -8,6 +8,3 @@ eval "$(rbenv init -)"
 export IRBDIR="$DOTFILE/irb"
 export IRBRC="$IRBDIR/irbrc"
 
-# Setup python virtualenv 
-export WORKON_HOME=$HOME/.pyenv
-if [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] ; then . "/usr/local/bin/virtualenvwrapper.sh"; fi
