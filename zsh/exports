@@ -2,6 +2,7 @@ if [[ "1" == $ZRCDEBUG ]]; then echo -n ".exports "; fi
 
 # shell variables
 export EDITOR="emacs"
+export GEM_EDITOR="mate"
 export PAGER="less"
 export BUNDLER_EDITOR="mate -w"
 export CLICOLOR=1
