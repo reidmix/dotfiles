@@ -1,9 +1,5 @@
 if [[ "1" == $ZRCDEBUG ]]; then echo -n ".develop "; fi
 
-# This loads rbenv into a session
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
 # returns correct IRBRC
 export IRBDIR="$DOTFILE/irb"
 export IRBRC="$IRBDIR/irbrc"
