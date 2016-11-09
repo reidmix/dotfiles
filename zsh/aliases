@@ -30,6 +30,9 @@ alias em='emacs'
 alias be='bundle exec'
 alias m1='open -a "/Applications/TextMate 1.app"'
 
+# because i forget
+alias ssh-keys="ssh-add -l"
+
 # mac os specific
 alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
 alias sf='SetFile' # -a V filename # => invisible

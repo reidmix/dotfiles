@@ -1,5 +1,9 @@
 if [[ "1" == $ZRCDEBUG ]]; then echo -n ".develop "; fi
 
+## Node Version Manager
+export NVM_DIR="/Users/rmacdonald/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
 # This loads rbenv into a session
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"

@@ -10,7 +10,7 @@ volume () {
     sudo osascript -e "output volume of (get volume settings)"
   elif (( $# == 1 )); then
     sudo osascript -e "set volume $1"
-  else 
+  else
     echo "usage: $(basename "$0") [0-10]"
   fi
 }
@@ -18,6 +18,14 @@ volume () {
 cloud() {
   eval "$(ion-client shell)"
   cloud "$@"
+}
+
+nocloud() {
+  unset HEROKU_CLOUD
+  unset ION_HOST
+  unset ION_DOMAIN
+  unset HEROKU_HOST
+  unset HEROKU_API_URL
 }
 
 clean_ssh_agent() {
