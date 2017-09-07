@@ -3,11 +3,15 @@ packages=(
   curl
   ack
   findutils
+  heroku
+  httpie
   git
-  hub
+  jq
   rbenv
+  rbenv-bundle-exec
+  rbenv-bundler-ruby-version
+  rbenv-default-gems
   ruby-build
-  squashfs
   trash
   wget
   homebrew/dupes/grep
