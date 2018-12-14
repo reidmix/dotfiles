@@ -1,0 +1,35 @@
+[user]
+  name = Reid McFarland
+  email = reidmix@gmail.com
+
+[color]
+  ui = true
+  diff = auto
+  status = auto
+  branch = auto
+
+[alias]
+  co = checkout
+  ci = commit
+  br = branch
+  st = status
+  unstage = reset HEAD --
+  smush = commit --amend --no-edit
+  graph = log --graph --decorate --oneline
+  last = log -1 HEAD
+
+[branch]
+  autosetuprebase = always
+
+[log]
+  date = local
+
+[merge]
+  conflictstyle=diff3
+
+[rerere]
+  enabled = true
+  autoupdate = true
+
+[push]
+  default = simple

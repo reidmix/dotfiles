@@ -8,6 +8,8 @@ steps=(
 	brew
 	packages
 	setup-zsh
+  setup-git
+  heroku
 )
 
 for step in "${steps[@]}"; do
